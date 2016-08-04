@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+	<h:head />
+	<h:body>
+
+	<h:form id="formul">
+	<br/>
+	<br/> 
+	<br/>
+	
+	<div align="center">  
+				
+				
+		<br/>
+		<br/>	
+		<h:panelGrid columns="2" cellpadding="5">  		
+			<h:outputText value="Titulo de La Obra: " />  
+			<p:inputText  id="tit" value="#{BeanBusqueda.titulo}" size="50"></p:inputText>
+			<h:outputText value="No de Documento (Cedula/Nit) " />  
+			<p:inputText  id="ced" value="#{BeanBusqueda.cedula}" ></p:inputText>
+			<h:outputText value="Entidad " />  
+			<p:inputText  id="ent" value="#{BeanBusqueda.entidad}" ></p:inputText>
+            <h:outputText value="Nombre " />  
+			<p:inputText  id="nom" value="#{BeanBusqueda.nombre}" ></p:inputText>
+            <h:outputText value="Primer Apellido" />  
+			<p:inputText  id="ape1" value="#{BeanBusqueda.apellido1}" ></p:inputText>
+            <h:outputText value="Segundo Apellido " />  
+			<p:inputText  id="ape2" value="#{BeanBusqueda.apellido2}" ></p:inputText>
+            <h:outputText value="Clase de Registro: " />  
+	        <h:selectOneMenu value="#{BeanBusqueda.clsReg}"  id="sel">  
+	            <f:selectItem itemLabel="Seleccione " itemValue="" />  
+	            <f:selectItems value="#{BeanBusqueda.clsRegs}" var="select" itemLabel="#{select.nombre}" itemValue="#{select.codigo}" />	            
+	        </h:selectOneMenu>  
+	        <h:outputText value="Tipo de Persona: " />  
+	        <h:selectOneMenu value="#{BeanBusqueda.tipoPer}"  id="sel1">  
+	            <f:selectItem itemLabel="Seleccione " itemValue="" />  
+	            <f:selectItems value="#{BeanBusqueda.tipoPers}" var="select1" itemLabel="#{select1.nombre}" itemValue="#{select1.codigo}" />	            
+	        </h:selectOneMenu>  
+	        <h:outputText value="Fecha de Registro: " /> 	
+	        <br/>	   	          
+	        <h:outputText value="Fecha Desde (mm/DD/yy): " /> 
+    		<p:inputText  id="dsd" value="#{BeanBusqueda.fechaDesde}" size="8" maxlength="8" ></p:inputText>
+    		<h:outputText value="Fecha Hasta (mm/DD/yy): " /> 
+    		<p:inputText  id="hst" value="#{BeanBusqueda.fechaHasta}" size="8" maxlength="8"></p:inputText>        
+        </h:panelGrid> 
+        <br/>
+		<br/>
+		<h:commandButton   value="Buscar" action="#{BeanBusqueda.Busq}"></h:commandButton>
+       	<h:commandButton   value="Volver" action="view">	</h:commandButton> 	<br/><br/>	
+     </div> 
+</h:form>
+	</h:body>
+</f:view>

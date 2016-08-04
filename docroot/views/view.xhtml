@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+	<h:form id="formulario">
+	<script>
+		function muestra_oculta(id){
+			if (document.getElementById){ 
+				var el = document.getElementById(id);
+				if(el.style.display=='none'){
+					document.getElementById("btn").style.display='none';
+				}
+				el.style.display = (el.style.display == 'none') ? 'block' : 'none'; 
+			}
+		}
+		
+			
+	</script>
+	<br/>
+	<br/> 
+	<br/>
+	
+	<div align="center">  
+		<p:inputText  id="bsq" value="#{BeanBusqueda.buscar}" size="50"></p:inputText>			
+		<h:commandButton   value="Buscar" action="#{BeanBusqueda.Busq}"></h:commandButton>			
+	  	<h:commandButton   value="Avanzada" action="avanzada">	</h:commandButton>
+	  	</div>
+	<br/>
+	<br/>
+		
+ 	</h:form>	
+	
+</f:view>
